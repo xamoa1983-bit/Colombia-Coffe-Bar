@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    scroll-behavior: smooth; /* Activa el deslizamiento suave para las anclas */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,11 +25,11 @@ body {
 
 /* --- HEADER --- */
 .header {
-    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(imagenes/bg.jpg);
-    background-position: center bottom;
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('imagenes/bg.jpg');
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 70vh; 
+    min-height: 85vh; 
     display: flex;
     align-items: center; 
     position: relative;
@@ -101,16 +105,22 @@ body {
 
 .btn-1 {
     display: inline-block;
-    padding: 11px 35px;
+    padding: 12px 35px;
     background-color: #CE967B;
     color: #F9FAFC;
     text-transform: uppercase;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center; /* 🟢 Centra el texto del botón cuando actúa como enlace mailto */
 }
 
 .btn-1:hover {
     background-color: #EBAD8D;
+    transform: translateY(-2px);
 }
 
 /* --- SECCIÓN COFFEE --- */
@@ -162,7 +172,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    opacity: 0.2; /* Evita que tape el texto si es muy grande */
+    opacity: 0.15; /* Evita que tape el texto si es muy grande */
 }
 
 .Coffee-1 h3 {
@@ -173,7 +183,7 @@ body {
 
 /* --- SECCIÓN SERVICIOS --- */
 .services {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(imagenes/bg2.png);
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imagenes/bg2.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -225,15 +235,16 @@ body {
     display: flex;
     align-items: stretch;
     background-color: #E1E2E6;
-    min-height: 400px;
+    min-height: 450px;
 }
 
 .General-1 {
     width: 50%;
-    padding: 80px;
+    padding: 60px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .General-1 h2 {
@@ -251,7 +262,7 @@ body {
 }
 
 .General-2 {
-    background-image: url(imagenes/coffe-1.jpg);
+    background-image: url('imagenes/blog1.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -259,7 +270,7 @@ body {
 }
 
 .General-3 {
-    background-image: url(imagenes/coffee-2.jpg);
+    background-image: url('imagenes/blog2.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -273,7 +284,16 @@ body {
 }
 
 .Blog h2 {
-    margin-bottom: 10px;
+    font-size: 55px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.Blog p {
+    font-size: 16px;
+    color: #414247;
+    margin-bottom: 40px;
 }
 
 .Blog-content {
@@ -302,10 +322,83 @@ body {
     margin-bottom: 10px;
 }
 
+/* --- SECCIÓN CONTACTO --- */
+.Contacto-seccion {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #f0f1f4; /* Fondo gris estético */
+}
+
+.Contacto-seccion h2 {
+    font-size: 55px;
+    color: #323337;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.Contacto-seccion p {
+    font-size: 16px;
+    color: #414247;
+}
+
+.form-contacto {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    background: #ffffff; /* Tarjeta blanca para contrastar */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-input {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.form-group-input label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a4b4f;
+    text-transform: uppercase;
+}
+
+.form-group-input input,
+.form-group-input textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    background-color: #fcf9f5;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group-input input:focus,
+.form-group-input textarea:focus {
+    outline: none;
+    border-color: #CE967B;
+    box-shadow: 0 0 5px rgba(206, 150, 123, 0.3);
+}
+
+.form-group-input textarea {
+    resize: vertical;
+}
+
+.form-contacto button, .form-contacto .btn-1 {
+    align-self: center;
+    margin-top: 10px;
+}
+
 /* --- FOOTER --- */
 .footer {
     padding: 80px 0;
-    background-color: #000000;
+    background-color: #1a0f05;
 }
 
 .footer-content {
@@ -318,6 +411,7 @@ body {
     font-size: 18px;
     color: #F9FAFC;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .link a {
@@ -364,7 +458,11 @@ body {
 
     /* Mostrar menu al activar checkbox */
     #menu:checked ~ .navbar {
-        display: block;
+        display: block; /* 🟢 Corregido y cerrado correctamente */
+    }
+
+    .header {
+        min-height: 60vh;
     }
 
     .header-content h1 {
@@ -372,8 +470,13 @@ body {
         line-height: 55px;
     }
 
-    .Coffee-group, .services-group, .Blog-content, .footer-content, .General {
+    .Coffee-group, 
+    .services-group, 
+    .Blog-content, 
+    .footer-content, 
+    .General {
         flex-direction: column;
+        gap: 30px;
     }
 
     .General-1, .General-2, .General-3 {
@@ -381,9 +484,15 @@ body {
         height: 300px;
         padding: 40px 20px;
         text-align: center;
+        align-items: center;
     }
 
     .Blog-1 img {
         height: 200px;
+    }
+
+    .form-contacto {
+        margin: 30px 20px 0 20px;
+        padding: 25px; 
     }
 }
